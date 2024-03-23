@@ -1,0 +1,18 @@
+@import '../../scss/variables/variables';
+
+.card {
+  padding: 20px;
+  border-radius: $border-radius-small;
+  background-color: $color-white;
+  display: grid;
+  gap: 20px;
+  text-align: center;
+}
+.card__image {
+  img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}
