@@ -126,6 +126,10 @@
   border-bottom-right-radius: $border-radius-small;
   border: 1px solid $color-grey-200;
   border-left: none;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .form__error {
   position: absolute;
