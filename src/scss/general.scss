@@ -1,0 +1,53 @@
+@import './variables/variables.scss';
+@import './variables/breakpoints.scss';
+
+body {
+  background-color: $color-grey-100;
+  color: $color-text;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  line-height: 1.625;
+}
+
+.container {
+  max-width: 1290px;
+  margin: 0 auto;
+  padding-left: 16px;
+  padding-right: 16px;
+  @media (min-width: $tabletBreakpoint) {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  @media (min-width: $laptopBreakpoint) {
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+}
+
+.button {
+  display: inline-block;
+  &:disabled {
+    background-color: $color-grey-300;
+    color: $color-white;
+    cursor: not-allowed;
+  }
+}
+.button--cta {
+  padding: 4px 19px;
+  min-width: 100px;
+  background-color: $color-primary;
+  border-radius: 80px;
+  font-size: 16px;
+  line-height: 1.625;
+  font-weight: 400;
+  text-align: center;
+  color: $color-text;
+  transition: background-color 0.3s;
+  &:hover,
+  &:active {
+    &:not(:disabled) {
+      background-color: $color-primary-bright;
+    }
+  }
+}
+

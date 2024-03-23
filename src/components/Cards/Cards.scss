@@ -1,0 +1,31 @@
+@import '../../scss/variables/variables';
+
+$gap: 20px;
+$gapTablet: 16px;
+$gapLaptop: 29px;
+
+.cards {
+  padding: 140px 0 40px;
+}
+.cards__cards-wrap {
+  margin-top: 50px;
+  display: grid;
+  gap: $gap;
+  @media (min-width: $tabletBreakpoint) {
+    gap: $gapTablet;
+    $minmax: calc(calc(100% - $gapTablet * 2) / 3);
+    grid-template-columns: repeat(2, minmax($minmax, 1fr));
+  }
+  @media (min-width: $laptopBreakpoint) {
+    gap: $gapLaptop;
+    $minmax: calc(calc(100% - $gapLaptop * 2) / 3);
+    grid-template-columns: repeat(3, minmax($minmax, 1fr));
+  }
+}
+.cards__button-wrap {
+  margin-top: 50px;
+  text-align: center;
+}
+.cards__error {
+  text-align: center;
+}
