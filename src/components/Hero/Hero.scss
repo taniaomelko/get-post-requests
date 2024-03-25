@@ -6,11 +6,13 @@
   justify-content: center;
   padding: 40px 0;
   min-height: 500px;
-  background-image: url('../../../public/img/pexels-alexandr-podvalny-1227513.jpeg');
-  background-size: auto 162%;
+  background-image: url('../../../public/img/pexels-alexandr-podvalny-1227513-mob.webp');
+  background-size: cover;
   background-position: center bottom;
   @media (min-width: $tabletBreakpoint) {
     align-items: center;
+    background-image: url('../../../public/img/pexels-alexandr-podvalny-1227513.webp');
+    background-size: auto 162%;
   }
   @media (min-width: $laptopBreakpoint) {
     min-height: 650px;

@@ -17,7 +17,7 @@ export const UserPhoto: React.FC<UserPhotoProps> = ({ src, alt }) => {
   return (
     <>
       {src && !error ? (
-        <img src={src} alt={alt} onError={handleError} />
+        <img src={src} alt={alt} loading="lazy" onError={handleError} />
       ) : (
         <PhotoCoverIcon />
       )}

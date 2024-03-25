@@ -8,10 +8,12 @@ $gapLaptop: 29px;
   padding: 140px 0 40px;
 }
 .cards__cards-wrap {
-  margin-top: 50px;
+  margin: 50px auto 0;
   display: grid;
+  max-width: 500px;
   gap: $gap;
   @media (min-width: $tabletBreakpoint) {
+    max-width: unset;
     gap: $gapTablet;
     $minmax: calc(calc(100% - $gapTablet * 2) / 3);
     grid-template-columns: repeat(2, minmax($minmax, 1fr));
