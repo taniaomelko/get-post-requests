@@ -2,9 +2,6 @@
 
 .text-tooltip {
   position: relative;
-  span {
-    white-space: nowrap;
-  }
   a {
     transition: color 0.3s;
     &:hover {
