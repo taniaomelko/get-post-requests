@@ -123,7 +123,7 @@ export const Form: React.FC = () => {
   };
 
   const validateEmail = (email: string) => {
-    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const emailPattern = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/; 
 
     if (!email) {
       return 'Email is required';
@@ -131,7 +131,7 @@ export const Form: React.FC = () => {
     if (!emailPattern.test(email)) {
       return 'Invalid email format';
     }
-
+  
     return '';
   };
 
@@ -179,7 +179,6 @@ export const Form: React.FC = () => {
 
     return '';
   };
-
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();

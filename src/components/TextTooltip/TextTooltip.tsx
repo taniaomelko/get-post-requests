@@ -3,7 +3,7 @@ import './TextTooltip.scss';
 
 interface TextTooltipProps {
   fullText: string;
-  href?: string; // Optional href for links
+  href?: boolean; // Optional href for links
 }
 
 export const TextTooltip: React.FC<TextTooltipProps> = ({
@@ -19,27 +19,39 @@ export const TextTooltip: React.FC<TextTooltipProps> = ({
       const container = textContainerRef.current;
       if (!container) return;
 
-      const containerWidth = container.offsetWidth;
-      const averageCharWidth = 9; // Assume average character width is 9px
-      const maxChars = Math.floor(containerWidth / averageCharWidth) - 3;
-
-      // Check if the text needs to be trimmed
-      if (fullText.length > maxChars) {
-        setTrimmedText(`${fullText.substring(0, maxChars)}...`);
-      } else {
-        setTrimmedText(fullText);
+      // create temporary span for trimming text
+      const span = document.createElement('span');
+      span.style.visibility = 'hidden';
+      span.style.position = 'absolute';
+      span.style.whiteSpace = 'nowrap';
+      document.body.appendChild(span);
+      span.textContent = fullText;
+  
+      let maxChars = fullText.length;
+      while (container.clientWidth < span.offsetWidth && maxChars > 0) {
+        span.textContent = fullText.substring(0, maxChars);
+        maxChars--;
       }
+
+      const content = span.textContent;
+      if (fullText.length > maxChars) {
+        setTrimmedText(`${content.slice(0, -3)}...`);
+      } else {
+        setTrimmedText(content);
+      }
+
+      document.body.removeChild(span); // Cleanup
     };
 
     // Execute the function right away and also on resize/load events
     trimText();
-    window.addEventListener('resize', trimText);
     window.addEventListener('load', trimText);
+    window.addEventListener('resize', trimText);
 
     // Cleanup function
     return () => {
-      window.removeEventListener('resize', trimText);
       window.removeEventListener('load', trimText);
+      window.removeEventListener('resize', trimText);
     };
   }, [fullText]);
 
@@ -51,7 +63,7 @@ export const TextTooltip: React.FC<TextTooltipProps> = ({
       onMouseLeave={() => setIsHovered(false)}
     >
       {href ? (
-        <a href={`mailto:${href}`}>{trimmedText}</a>
+        <a href={`mailto:${fullText}`}>{trimmedText}</a>
       ) : (
         <p>{trimmedText}</p>
       )}

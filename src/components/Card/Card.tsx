@@ -33,7 +33,7 @@ export const Card: React.FC<CardProps> = ({ user }) => {
 
       <div className="card__info">
         <TextTooltip fullText={position} />
-        <TextTooltip fullText={email} href={email} />
+        <TextTooltip fullText={email} href={true} />
         <a href={`tel:${formatPhoneNumber(phone)}`}>{formatPhoneNumber(phone)}</a>
       </div>
     </div>
