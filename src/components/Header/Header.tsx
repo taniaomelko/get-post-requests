@@ -6,8 +6,8 @@ export const Header = () => {
     <header className="header">
       <div className="container">
         <nav className="header__nav">
-          <a href="/">
-            <Logo />
+          <a href="/" aria-label="home">
+            <Logo aria-hidden="true" />
           </a>
 
           <div className="header__buttons">
