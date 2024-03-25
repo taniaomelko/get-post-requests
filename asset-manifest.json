@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/get-post-requests/static/css/main.d5bafdf9.css",
-    "main.js": "/get-post-requests/static/js/main.fefb97ba.js",
+    "main.js": "/get-post-requests/static/js/main.fae7bedc.js",
     "static/js/453.5c1d9f0e.chunk.js": "/get-post-requests/static/js/453.5c1d9f0e.chunk.js",
     "static/media/pexels-alexandr-podvalny-1227513.jpeg": "/get-post-requests/static/media/pexels-alexandr-podvalny-1227513.f45470f1e1d4478204c7.jpeg",
     "static/media/Nunito-Regular.ttf": "/get-post-requests/static/media/Nunito-Regular.9d7a6e03c6e3ed49c7ac.ttf",
     "index.html": "/get-post-requests/index.html",
     "main.d5bafdf9.css.map": "/get-post-requests/static/css/main.d5bafdf9.css.map",
-    "main.fefb97ba.js.map": "/get-post-requests/static/js/main.fefb97ba.js.map",
+    "main.fae7bedc.js.map": "/get-post-requests/static/js/main.fae7bedc.js.map",
     "453.5c1d9f0e.chunk.js.map": "/get-post-requests/static/js/453.5c1d9f0e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d5bafdf9.css",
-    "static/js/main.fefb97ba.js"
+    "static/js/main.fae7bedc.js"
   ]
 }
